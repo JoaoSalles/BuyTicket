@@ -1,7 +1,7 @@
 import { Message } from 'node-nats-streaming';
 import mongoose from 'mongoose';
 import { ExpirationCompleteEvent, OrderStatus } from "@estudos/common";
-import { ExpirationCompleteListener } from '../expiration-complete.listener';
+import { ExpirationCompleteListener } from '../expiration-complete-listener';
 import { natsWrapper } from '../../../nats-wrapper';
 import { Ticket } from '../../../models/ticket';
 import { Order } from '../../../models/order';
