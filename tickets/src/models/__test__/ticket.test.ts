@@ -12,13 +12,13 @@ it('implements optimistic concurrency control', async (done) => {
     const firstIntance = await Ticket.findById(ticket.id);
     const secondIntance = await Ticket.findById(ticket.id);
 
-    firstIntance.set({ price: 10});
-    secondIntance.set({ price: 15 });
+    firstIntance!.set({ price: 10});
+    secondIntance!.set({ price: 15 });
 
-    await firstIntance.save();
+    await firstIntance!.save();
 
     try {
-        await secondIntance.save();
+        await secondIntance!.save();
     } catch (err) {
         return done();
     }
