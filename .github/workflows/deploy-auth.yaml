@@ -18,3 +18,9 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: docker push jaosalless/auth
+      - uses: digitalocean/action-doct@v2
+        with:
+          token:  ...
+      - run: doctl kunernetes cluster kubeconfig save ticketing  
+      - run: kubectl rollout restart deployment auth-depl
+        
